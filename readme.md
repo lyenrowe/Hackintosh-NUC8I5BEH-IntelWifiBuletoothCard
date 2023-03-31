@@ -1,18 +1,22 @@
+## Intel NUC8I5BEH EFI for Monterey 12.* (Intel WIFI + Bluetooth)
+
+### 适用范围
+
+1. 适用于 NUC8I5BEH，原装Intel蓝牙和wifi
+
+2. macOS系统 Monterey
+
+### opencore 0.9.0
+
 ### 安装说明
 
-1. 适用于 NUC8I5BEH 原装Intel蓝牙和wifi: Intel® Wireless-AC 9560 + Bluetooth 5.0
+1. 默认是Macos+Windows的双系统引导，如只引导Macos单系统，请将config-macos单系统.plist重命名为config.plist（原config.plist删除）
 
-2. 系统 Monterey
-
-3. opencore版本0.9.0
-
-4. 默认是Macos+Windows的双系统引导，只有Macos单系统，请将config-macos单系统.plist重命名为config.plist（原config.plist删除）
-
-5. 系统安装完成后自己修改序列号等相关配置
+2. 系统安装完成后自行修改序列号等相关配置
 
    + https://checkcoverage.apple.com/ 在此站点查询Serial，确保是无效的（没有被使用）。
 
-   + 新装黑苹果生成序列号等SMBIOS信息可使用工具 https://github.com/corpnewt/GenSMBIOS。详情查看 https://dortania.github.io/OpenCore-Install-Guide/AMD/fx.html#platforminfo
+   + 新装黑苹果生成序列号等SMBIOS信息可使用工具 https://github.com/corpnewt/GenSMBIOS 。详情查看 https://dortania.github.io/OpenCore-Install-Guide/AMD/fx.html#platforminfo
 
      ```sh
        #######################################################
@@ -38,7 +42,7 @@
 
      `Apple ROM`<---> ROM
 
-   + 编辑信息可使用https://github.com/corpnewt/ProperTree，当然也可以使用文本方式修改，但要注意其中的`Apple ROM`（以太网mac地址）是二进制数据。
+   + 编辑信息可使用 https://github.com/corpnewt/ProperTree ，当然也可以使用文本方式修改，但要注意其中的`Apple ROM`（以太网mac地址）是二进制数据。
 
    + 老的黑苹果应将之前的SMBIOS信息复制过去，而不是重新生成。所以老的EFI替换之前要做好备份
 
