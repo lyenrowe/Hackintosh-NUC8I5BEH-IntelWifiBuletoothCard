@@ -12,7 +12,7 @@
 
    + https://checkcoverage.apple.com/ 在此站点查询Serial，确保是无效的（没有被使用）。
 
-   + 新装黑苹果生成序列号等SMBIOS信息可使用工具 https://github.com/corpnewt/GenSMBIOS。详情查看 https://dortania.github.io/OpenCore-Install-Guide/AMD/fx.html#platforminfo
+   + 新装黑苹果生成序列号等SMBIOS信息可使用工具 https://github.com/corpnewt/GenSMBIOS 。详情查看 https://dortania.github.io/OpenCore-Install-Guide/AMD/fx.html#platforminfo
 
      ```sh
        #######################################################
