@@ -8,6 +8,28 @@
 
 ### opencore 0.9.0
 
+### BIOS 设置
+
+参考： https://dortania.github.io/OpenCore-Install-Guide/config-laptop.plist/coffee-lake.html#intel-bios-settings
+
+我的BIOS版本是0092，文中提到设置项有如下关联项，可以BIOS设置界面顶部搜索框中搜索下面的选项关键字
+
+#### Disable
+
+Fast Boot  --默认未勾选
+
+Secure Boot  --去掉勾选
+
+Interl VT for ...(VT-d)  --去掉勾选
+
+Intel Platform Trust Technology  --去掉勾选
+
+#### Enable
+
+Hyper-Threading Technology  --默认已勾选
+
+Chipset SATA Mode: AHCI  --默认已勾选
+
 ### 安装说明
 
 1. 默认是Macos+Windows的双系统引导，如只引导Macos单系统，请将config-macos单系统.plist重命名为config.plist（原config.plist删除）
