@@ -12,23 +12,19 @@
 
 参考： https://dortania.github.io/OpenCore-Install-Guide/config-laptop.plist/coffee-lake.html#intel-bios-settings
 
-我的BIOS版本是0092，文中提到设置项有如下关联项，可以BIOS设置界面顶部搜索框中搜索下面的选项关键字
+我的BIOS版本是0092，文中提到设置项有如下关联项，可以BIOS设置界面顶部搜索框中搜索下面的选项关键字。
 
 #### Disable
 
-Fast Boot  --默认未勾选
-
-Secure Boot  --去掉勾选
-
-Interl VT for ...(VT-d)  --去掉勾选
-
-Intel Platform Trust Technology  --去掉勾选
+- Fast Boot  --默认未勾选
+- Secure Boot  --去掉勾选
+- Interl VT for ...(VT-d)  --去掉勾选
+- Intel Platform Trust Technology  --去掉勾选
 
 #### Enable
 
-Hyper-Threading Technology  --默认已勾选
-
-Chipset SATA Mode: AHCI  --默认已勾选
+- Hyper-Threading Technology  --默认已勾选
+- Chipset SATA Mode: AHCI  --默认已勾选
 
 ### 安装说明
 
@@ -70,7 +66,7 @@ Chipset SATA Mode: AHCI  --默认已勾选
 
 ### 问题
 
-WiFi蓝牙非白果卡，Airdrop不能使用。
+- WiFi蓝牙非白果卡，Airdrop不能使用。
 
 ### 替换EFI
 
@@ -82,3 +78,15 @@ sudo diskutil mount /dev/diskXs1
 #其中 X 是磁盘编号。比如我们要挂载disk0的EFI Partition，它的标识符是disk0s1，命令如下。
 sudo diskutil mount /dev/disk0s1
 ```
+
+### 问题日志
+
+- 2023-04-01 发现不能正常睡眠，刚进入睡眠约2秒，就又被唤醒了。后来发现是接在SATA接口的机械硬盘（这上面安装了window10）引起。
+
+  通过系统设置解决，进入 偏好设置 -> 节能
+
+  ​	`disable`启用电能小憩 --未插入机械硬盘时启用也不影响睡眠，有机械硬盘后必须得关闭
+
+  ​	`enable` 如果可能，使硬盘进入睡眠 --未插入机械硬盘时没看到这个选项
+  
+  当然这期间BIOS中所有power相关的设置（从休眠中唤醒）我都设置成off或disable。如：`Wake on LAN from S4/S5`: stay off，其他值不记得了。我觉得和这应该没有关系。暂未调回来做验证
